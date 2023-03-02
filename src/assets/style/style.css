@@ -1,0 +1,70 @@
+.root {
+    width: 300px !important;
+    background-color: #EBECF0 !important;
+    margin-left: 1em;
+}
+.editableTitle {
+    margin-left: 1em !important;
+    flex-grow:1;
+    font-size: 1.2rem !important;
+    font-weight: bold !important;
+
+}
+.editableTitleContainer{
+    margin-left: 1em !important;
+    display:flex;
+}
+.editableTitleInput{
+    margin-left: 1em !important;
+    font-size: 1.2rem !important;
+    font-weight: bold !important;
+
+}
+
+.editableTitleInput:focus{
+    background:#ddd;
+}
+.card{
+    padding: 1em 1em 1em 2em;
+    margin: 1em;
+}
+.addCardRoot{
+    width: 280px !important;
+    margin-top: 2em;
+}
+.addCard{   
+    background-color: #EBECF0 !important;
+    padding: 1em 1em 1em 2em;
+    margin: 0em, 1em, 1em, 1em;
+}
+.addCard:hover{
+    background-color: rgba(0, 0, 0, 0.2)!important;
+}
+.inputCard{
+    margin: 1em !important;
+    padding-bottom: 4em;
+}
+.btnConfirm{
+    background: #5AAc44 !important;
+    color: #fff !important;
+}
+.btnConfirm:hover{
+    background: rgba(90, 172, 68, 0.7) !important;
+}
+.confirm{
+    margin: 1em !important;
+}
+.main{
+    display: flex;
+    height: 100vh;
+    margin-top: 2em;
+}
+.cardContainer{
+    margin-top: 4em !important;
+}
+.logo{
+    height: 4em;
+}
+.drawer{
+    width: 400px !important;
+}
