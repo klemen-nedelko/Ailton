@@ -9,6 +9,8 @@ import React from 'react';
 import '../../assets/style/style.css';
 import { styled } from '@mui/material/styles';
 import LogoutIcon from '@mui/icons-material/Logout';
+import { UserAuth } from '../context/AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
   '& .MuiBadge-badge': {
@@ -40,6 +42,22 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 }));
 
 export const SideMenu = ({ setOpenSideMenu, openSideMenu }) => {
+
+  const {user, logout} = UserAuth();
+  const navigate = useNavigate();
+
+  const handleLogout = async (e) => {
+    e.preventDefault();
+    try{
+        await logout();
+        navigate('/');
+        console.log("Logged out");
+    }catch(e){
+        console.log(e.message);
+    }
+
+}
+
   return (
     <div>
         <Drawer 
@@ -58,12 +76,13 @@ export const SideMenu = ({ setOpenSideMenu, openSideMenu }) => {
               </StyledBadge>
             </Grid>
             <Grid item xs={6}>
-              <Typography variant="h6"  >Klemen Nedelko</Typography>
+              <Typography variant="h6"  >Logged in as:</Typography>
+              <Typography> {user.email}</Typography>
             </Grid>
           </Grid>
           <Divider />
           <Grid xs={12}>
-            <Button fullWidth variant="outlined" endIcon={<LogoutIcon/>} color="error"> Logout</Button>
+            <Button fullWidth variant="outlined" endIcon={<LogoutIcon/>} color="error" onClick={handleLogout}> Logout</Button>
           </Grid>
         </Drawer>
     </div>
