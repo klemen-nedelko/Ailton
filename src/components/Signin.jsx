@@ -32,8 +32,7 @@ const Signin = () => {
     >
         <Grid item xs={4}>
         <Card>
-            <Typography variant='h5'>Log in to your account</Typography>
-            <img src={logo} alt="logo" style={{width:'450px', height:'450px'}}/>
+            <img src={logo} alt="logo" style={{width:'250px', height:'250px'}}/>
             <form onSubmit={handleSubmit}>
                 <div>
                     <Typography>Email</Typography>
