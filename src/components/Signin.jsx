@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { UserAuth } from './context/AuthContext';
 import { Card, Button, Typography, Grid, TextField } from '@mui/material';
+import logo from '../assets/ailton_logo.png';
 
 
 const Signin = () => {
@@ -32,12 +33,12 @@ const Signin = () => {
         <Grid item xs={4}>
         <Card>
             <Typography variant='h5'>Log in to your account</Typography>
-
+            <img src={logo} alt="logo" style={{width:'450px', height:'450px'}}/>
             <form onSubmit={handleSubmit}>
                 <div>
                     <Typography>Email</Typography>
                     <TextField 
-                        label="Outlined"
+                        label="Email"
                         variant="outlined"
                         onChange={(e)=> setEmail(e.target.value)}
                         type="email" />
@@ -45,12 +46,12 @@ const Signin = () => {
                 <div>
                     <Typography>Password</Typography>
                     <TextField
-                        label="Outlined"
+                        label="Password"
                         variant="outlined"
                         onChange={(e)=> setPassword(e.target.value)}
                         type="password" />
                 </div>
-                        <Button type="submit">Sign up</Button>
+                        <Button type="submit">Login</Button>
             </form>
             {error}
         </Card>
