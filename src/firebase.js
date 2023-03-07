@@ -3,13 +3,13 @@ import { initializeApp } from "firebase/app";
 import {getAuth} from 'firebase/auth';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyD39zBAL8LwHhFljpSWGTablw5IE0ZpePU",
-  authDomain: "firabase-auth-fb215.firebaseapp.com",
-  databaseURL: "https://firabase-auth-fb215-default-rtdb.europe-west1.firebasedatabase.app",
-  projectId: "firabase-auth-fb215",
-  storageBucket: "firabase-auth-fb215.appspot.com",
-  messagingSenderId: "712001564101",
-  appId: "1:712001564101:web:b70aa35448c0883b802fac"
+  apiKey: process.env.REACT_APP_FIREBASE_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_DOMAIN ,
+  databaseURL: process.env.REACT_APP_FIREBASE_DATABASE,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID
 };
 
 // Initialize Firebase
