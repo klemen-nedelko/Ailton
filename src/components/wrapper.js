@@ -111,6 +111,7 @@ function Wrapper() {
   }
 
   return (
+    <>
     <StoreApi.Provider value={{addMoreCard, addMoreList, updateListTitle}}>
       <DragDropContext onDragEnd={onDragEnd}>
         <Droppable droppableId="app" type="list" direction="horizontal" >
@@ -130,6 +131,7 @@ function Wrapper() {
         </Droppable>
       </DragDropContext>
     </StoreApi.Provider>
+    </>
   );
 }
 

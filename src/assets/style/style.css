@@ -68,3 +68,9 @@
 .drawer{
     width: 400px !important;
 }
+.footer {
+    margin-top:calc(5% + 60px);
+    bottom: 0;
+    background-color: transparent !important;
+    color: #000 !important;
+  }
