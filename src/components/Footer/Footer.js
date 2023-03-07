@@ -12,7 +12,7 @@ const Footer = () => {
             alignItems="center"
             >
                 <Grid item xs={4}>
-                <Typography>Klemen Nedelko @copyright</Typography>
+                <Typography>Ailton ©copyright {(new Date().getFullYear())}</Typography>
                 </Grid>
             </Grid>
             
