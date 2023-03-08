@@ -1,9 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap');
+:root{
+    
+    font-family: 'Fugaz One', cursive !important;
+    background-color: #222 !important;
+    
+}
+.whiteColor{
+    color: #f5f5f5 !important;
+}
 .weather {
     width: 300px;
     border-radius: 6px;
-    box-shadow: 1px -2px 20px 2px rgba(0 0 0 /30%);
-    color:#fff;
-    background-color: #333;
+    box-shadow: 1px -2px 20px 2px rgba(250, 250, 250, 0.3);
+    color:#fff !important;
+    background-color: #333 !important;
     margin: 20px auto 0 auto;
     padding: 0 20px 20px 20px;
 }
@@ -11,6 +21,7 @@
     display: flex;
     justify-content:space-around;
     align-items:center;
+    color: #fff;
 }
 .city {
     font-weight: 600;
@@ -20,20 +31,21 @@
     letter-spacing: 1px;
 }
 .weatherDescription {
-    font-weight: 400;
-    font-size: 14px;
-    line-height:1;
-    margin: 0;
+    font-weight: 400 !important;
+    font-size: 14px !important;
+    line-height:1 !important;
+    margin: 0 !important;
 }
 .weather-icon {
-    width: 100px;
+    width: 100px !important;
 
 }
 .temperatur {
-    font-weight: 600;
-    font-size: 70px;
+    font-family: 'Carter One', cursive !important;
+    font-weight: 600 !important;
+    font-size: 70px !important;
     width: auto;
-    letter-spacing:  -5px;
+    letter-spacing:  -5px !important;
     margin: 10px 0;
 }
 .details {
@@ -47,12 +59,12 @@
 }
 .parameter-label {
     text-align: left;
-    font-weight:400;
-    font-size: 12px;
+    font-weight:400 !important;
+    font-size: 12px !important;
 }
 .parameter-value{
 
     text-align: right;
-    font-weight: 600;
-    font-size: 12px;
+    font-weight: 600 !important;
+    font-size: 12px !important;
 }

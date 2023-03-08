@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap');
+:root{
+    
+    font-family: 'Fugaz One', cursive !important;
+    background-color: #EBECF0 !important;
+}
+
 .root {
     width: 300px !important;
     background-color: #EBECF0 !important;
@@ -71,6 +78,6 @@
 .footer {
     margin-top:calc(5% + 60px);
     bottom: 0;
-    background-color: transparent !important;
-    color: #000 !important;
+    background-color: #222 !important;
+    color: #fff !important;
   }

@@ -1,19 +1,25 @@
+import { Card, CardContent, Typography, Grow } from '@mui/material';
 import React from 'react';
 import "./currentWeather.css";
 
 const CurrentWeather = ({ data }) => {
+    const zoom = true;
     return (
-        <div className="weather">
+        <>
+        <Grow
+        in={zoom}
+        >
+        <Card className="weather">
             <div className="top">
                 <div>
-                    <p className="city">{data.city}</p>
-                    <p className="weatherDescription">{data.weather[0].description}</p>
+                    <label className="city">{data.city} </label>
+                    <label className="weatherDescription"> {data.weather[0].description}</label>
                 </div>
                 <img alt="weather" className="weather-icon" src={`icons/${data.weather[0].icon}.png`}/>
 
             </div>
-            <div className="bottom">
-                <p className="temperatur">{Math.round(data.main.temp)}°C</p>
+            <CardContent className="bottom">
+                <Typography className="temperatur">{Math.round(data.main.temp)}°C</Typography>
                 <div className="details">
                     <div className="parameter-row">
                         <span className="parameter-label">Details</span>
@@ -37,8 +43,10 @@ const CurrentWeather = ({ data }) => {
                         <span className="parameter-value">{data.main.pressure}hPa</span>
                     </div>
                 </div>
-            </div>
-        </div>
+            </CardContent>
+        </Card>
+        </Grow>
+        </>
     )
 }
 

@@ -1,4 +1,4 @@
-import { Typography } from '@mui/material'
+import { Typography  } from '@mui/material'
 import React, { useState } from 'react'
 import Layout from '../Layout/Layout'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -6,7 +6,8 @@ import { faCloudSunRain } from '@fortawesome/free-solid-svg-icons'
 import Search from './search'
 import CurrentWeather from './current-weather/currentWeather'
 import { WEATHER_API_KEY, WEATHER_API_URL } from './api'
-import Forecast from './forecast/Forecast'
+import Forecast from './forecast/Forecast';
+import "./current-weather/currentWeather.css";
 
 const Wailton = () => {
 
@@ -14,8 +15,9 @@ const Wailton = () => {
   const [forecast, setForecast] = useState(null);
 
   const handleOnSearchChange = (searchData) => {
-    const [lat, lon] = searchData.value.split(" ");
 
+    const [lat, lon] = searchData.value.split(" ");
+    
     const currentWeatherFetch = fetch(`${WEATHER_API_URL}/weather?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}&units=metric`);
     const forecastFetch = fetch(`${WEATHER_API_URL}/forecast?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}&units=metric`);
 
@@ -31,10 +33,10 @@ const Wailton = () => {
         console.error(error);
       })
   }
-  console.log(forecast);
+
   return (
     <Layout>
-      <Typography variant='h6'>Weather visualization  <FontAwesomeIcon icon={faCloudSunRain} /></Typography>
+      <Typography variant='h6' className='whiteColor'>Weather forecast and current weather for your city  <FontAwesomeIcon icon={faCloudSunRain} /></Typography>
       <Search
         onSearchChange={handleOnSearchChange}
       />
@@ -42,7 +44,9 @@ const Wailton = () => {
         data={currentWeather}
       /> :
         " "}
-        {forecast? <Forecast data={forecast}/>:""}
+        {forecast? 
+          <Forecast data={forecast}/>
+        :""}
     </Layout>
   )
 }
