@@ -42,7 +42,7 @@ const Signin = () => {
         >
             <Grid item xs={4}>
             <Card style={{ alignItems: 'center', textAlign: 'center' }}>
-                <img src={logo} alt="logo" style={{width:'250px', height:'250px'}}/>
+                <img src={logo} alt="logo" style={{width:'250px', height:'250px', marginLeft:'auto', marginRight:'auto'}}/>
                 <form onSubmit={handleSubmit}>
                     <Grid
                         alignItems="center"

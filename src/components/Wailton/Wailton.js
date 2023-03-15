@@ -1,13 +1,14 @@
-import { Typography  } from '@mui/material'
+import { Typography, Button,Tooltip  } from '@mui/material'
 import React, { useState } from 'react'
 import Layout from '../Layout/Layout'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCloudSunRain } from '@fortawesome/free-solid-svg-icons'
+import { faCloudSunRain, faHouse } from '@fortawesome/free-solid-svg-icons'
 import Search from './search'
 import CurrentWeather from './current-weather/currentWeather'
 import { WEATHER_API_KEY, WEATHER_API_URL } from './api'
 import Forecast from './forecast/Forecast';
 import "./current-weather/currentWeather.css";
+import { useNavigate } from 'react-router-dom';
 
 const Wailton = () => {
 
@@ -33,10 +34,26 @@ const Wailton = () => {
         console.error(error);
       })
   }
+  const navigate = useNavigate();
+
+  const goHome = ()=>{
+    navigate("/");
+  }
 
   return (
     <Layout>
-      <Typography variant='h6' className='whiteColor'>Weather forecast and current weather for your city  <FontAwesomeIcon icon={faCloudSunRain} /></Typography>
+      
+      <Typography variant='h6' className='whiteColor'><Button onClick={goHome} color="info"><FontAwesomeIcon icon={faHouse}/></Button>
+       Weather forecast and current weather for your city  <FontAwesomeIcon icon={faCloudSunRain} />
+       <Tooltip title="To see the current weather and the forecast please write your city name into search bar and WAIT a few seconds to load data from the API.">
+        <Button>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
+        </svg>
+    </Button>
+    </Tooltip>
+       </Typography>
+
       <Search
         onSearchChange={handleOnSearchChange}
       />
@@ -47,6 +64,7 @@ const Wailton = () => {
         {forecast? 
           <Forecast data={forecast}/>
         :""}
+
     </Layout>
   )
 }

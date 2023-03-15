@@ -29,7 +29,7 @@ const Menu = () => {
                         <Typography variant="h6"  color="white">Caitlon</Typography>
                     <FontAwesomeIcon icon={faCalendar}  color="white"/>
                 </MenuItem>
-                    <MenuItem onClick={sendToSailton}  disabled>
+                    <MenuItem onClick={sendToSailton}>
                     <Typography variant="h6"  color="white">Sailton </Typography>
                 <FontAwesomeIcon icon={faArrowTrendUp}  color="white"/></MenuItem>
                     <MenuItem  onClick={sendToWailton}>
