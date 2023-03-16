@@ -1,5 +1,5 @@
 import { Typography,Button } from '@mui/material';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowTrendUp, faHouse } from '@fortawesome/free-solid-svg-icons'
 import Dashboard from './components/Dashboard';
