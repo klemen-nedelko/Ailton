@@ -7,10 +7,8 @@ import "../../index.css";
 import ThemeContext from './context/ThemeContext';
 import StockContext from './context/StockContext';
 import { useNavigate } from 'react-router-dom';
-import ReactGA from 'react-ga';
 
 
-ReactGA.initialize(process.env.REACT_APP_GA_TRACKING_CODE)
 
 const Sailton = () => {
 
@@ -22,9 +20,6 @@ const Sailton = () => {
     navigate("/");
   }
 
-  useEffect(()=>{
-    ReactGA.pageview(window.location.pathname + window.location.search);
-  })
 
   return (
     <ThemeContext.Provider value={{darkMode, setDarkMode}}>
